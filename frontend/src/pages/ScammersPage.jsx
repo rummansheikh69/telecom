@@ -5,12 +5,22 @@ import { IoDocumentText } from "react-icons/io5";
 import { MdLocalPhone } from "react-icons/md";
 import { LuUser } from "react-icons/lu";
 import { IoLocationOutline } from "react-icons/io5";
+import { useState } from "react";
 
 function ScammersPage() {
-  const location = "John Doe, Road 32, Dhaka";
+  const location = "Road 32, Dhaka";
+
+  const [expanded, setExpanded] = useState(false);
+
+  // Dummy data
+  const scammerDetails =
+    "This person contacted me through Facebook Marketplace and asked for advance payment. After receiving the payment, he stopped responding and blocked all communication channels. Multiple people have reported similar incidents involving the same phone number and account.";
+
+  const MAX_CHARS = 35;
+  const shouldTruncate = scammerDetails.length > MAX_CHARS;
 
   return (
-    <div className=" bg-main h-screen">
+    <div className=" bg-main h-screen max-h-screen overflow-y-scroll">
       <PageTitle link={"/"} title={"Scammer Community"} />
 
       <div className=" mt-4 px-4">
@@ -45,8 +55,8 @@ function ScammersPage() {
             Recent Reports
           </h2>
 
-          <div className=" mt-4 grid grid-cols-12 gap-2">
-            <div className=" col-span-4 h-48 max-h-48  ">
+          <div className=" mt-4 grid grid-cols-12 gap-2 pb-4 border-b border-textGry/20">
+            <div className=" col-span-4 h-52 max-h-52  ">
               <div className=" rounded-md w-full h-full bg-subMain overflow-hidden">
                 <img
                   src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbIUDA_pct4Rlq8LANnoLjtPhBK666h3Zopw&s"
@@ -82,13 +92,27 @@ function ScammersPage() {
                   <p className=" text-textGry ">{location}</p>
                 </div>
 
-                <div className=" p-2 bg-main rounded-lg border-l-4 border-textGry mt-2">
-                  <p className=" text-sm italic  text-textPrimary">
-                    <q>No additional information available.</q>
+                {/* Detail of Scammer */}
+                <div className="p-2 bg-main rounded-lg border-l-4 border-textGry mt-2">
+                  <p className="text-sm italic text-textPrimary">
+                    <q>
+                      {expanded || !shouldTruncate
+                        ? scammerDetails
+                        : `${scammerDetails.slice(0, MAX_CHARS)}... `}
+                    </q>
+
+                    {shouldTruncate && (
+                      <button
+                        onClick={() => setExpanded(!expanded)}
+                        className="ml-1 text-secondary font-medium not-italic"
+                      >
+                        {expanded ? "See less" : "See more"}
+                      </button>
+                    )}
                   </p>
                 </div>
 
-                <div className=" mt-1">
+                <div className=" mt-2">
                   <div>
                     <h5 className=" text-xs text-textGry whitespace-nowrap">
                       Reported - 4 days ago
