@@ -9,6 +9,7 @@ export default {
         secondary: "#285694",
         textPrimary: "#151515",
         textGry: "#8B8C91",
+        light: "#E8E8EA",
       },
     },
   },

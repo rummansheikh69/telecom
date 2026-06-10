@@ -1,0 +1,104 @@
+import { MdVerifiedUser } from "react-icons/md";
+import { FaUser } from "react-icons/fa";
+import { IoChatbubbleEllipsesSharp } from "react-icons/io5";
+import { PiPhoneCallFill } from "react-icons/pi";
+import { FiPlus } from "react-icons/fi";
+import { GoStarFill } from "react-icons/go";
+import { TbMailFilled } from "react-icons/tb";
+import { FaCartShopping } from "react-icons/fa6";
+
+function ThirdGrid() {
+  return (
+    <div className="mt-6 grid grid-cols-5 gap-2">
+      {/* doc */}
+      <div className="bg-subMain rounded-2xl p-2 pt-3 shadow-lg flex items-center justify-center flex-col gap-1.5">
+        <div className=" size-8">
+          <img
+            src="images/doc.svg"
+            alt="wallet"
+            className=" w-full h-full object-contain"
+          />
+        </div>
+        <p className="text-sm text-primary font-medium">Rules</p>
+      </div>
+
+      {/* Verify */}
+      <div className="bg-subMain rounded-2xl p-2 pt-3 shadow-lg flex items-center justify-center flex-col gap-1.5">
+        <div className=" size-8 flex items-center justify-center">
+          <MdVerifiedUser size={32} className=" text-secondary" />
+        </div>
+        <p className="text-sm text-primary font-medium">Verify</p>
+      </div>
+
+      {/* Officer */}
+      <div className="bg-subMain rounded-2xl p-2 pt-3 shadow-lg flex items-center justify-center flex-col gap-1.5">
+        <div className=" size-8 flex items-center justify-center">
+          <FaUser size={32} className=" text-secondary" />
+        </div>
+        <p className="text-sm text-primary font-medium">Officer</p>
+      </div>
+
+      {/* chat */}
+      <div className="bg-subMain rounded-2xl p-2 pt-3 shadow-lg flex items-center justify-center flex-col gap-1.5">
+        <div className=" size-8 flex items-center justify-center">
+          <IoChatbubbleEllipsesSharp size={32} className=" text-secondary" />
+        </div>
+        <p className="text-sm text-primary font-medium">Chat</p>
+      </div>
+
+      {/* helpline */}
+      <div className="bg-subMain rounded-2xl p-2 pt-3 shadow-lg flex items-center justify-center flex-col gap-1.5">
+        <div className=" size-8 flex items-center justify-center">
+          <PiPhoneCallFill size={32} className=" text-secondary" />
+        </div>
+        <p className="text-sm text-primary font-medium">Helpline</p>
+      </div>
+
+      {/* admission */}
+      <div className="bg-subMain rounded-2xl p-2 pt-3 shadow-lg flex items-center justify-center flex-col gap-1.5">
+        <div className=" size-8 flex items-center justify-center">
+          <FiPlus size={32} className=" text-secondary" />
+        </div>
+        <p className="text-sm text-primary font-medium">Admit</p>
+      </div>
+
+      {/* balance */}
+      <div className="bg-subMain rounded-2xl p-2 pt-3 shadow-lg flex items-center justify-center flex-col gap-1.5">
+        <div className=" size-8">
+          <img
+            src="images/money.svg"
+            alt="wallet"
+            className=" w-full h-full object-contain"
+          />
+        </div>
+        <p className="text-sm text-primary font-medium">Balance</p>
+      </div>
+
+      {/* admission */}
+      <div className="bg-subMain rounded-2xl p-2 pt-3 shadow-lg flex items-center justify-center flex-col gap-1.5">
+        <div className=" size-8 flex items-center justify-center">
+          <GoStarFill size={32} className=" text-secondary" />
+        </div>
+        <p className="text-sm text-primary font-medium">Reviews</p>
+      </div>
+
+      {/* inbox */}
+      <div className="bg-subMain rounded-2xl p-2 pt-3 shadow-lg flex items-center justify-center flex-col gap-1.5">
+        <div className=" size-8 flex items-center justify-center">
+          <TbMailFilled size={32} className=" text-secondary" />
+        </div>
+        <p className="text-sm text-primary font-medium">Inbox</p>
+      </div>
+
+      {/* orders */}
+      <div className="bg-subMain rounded-2xl p-2 pt-3 shadow-lg flex items-center justify-center flex-col gap-1.5">
+        <div className=" size-8 flex items-center justify-center">
+          <FaCartShopping size={32} className=" text-secondary" />
+        </div>
+        <p className="text-sm text-primary font-medium">Orders</p>
+      </div>
+    </div>
+  );
+}
+
+export default ThirdGrid;
