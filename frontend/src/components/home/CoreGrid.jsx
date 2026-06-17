@@ -1,4 +1,5 @@
 import { FaCirclePlus } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 function CoreGrid() {
   return (
@@ -16,16 +17,18 @@ function CoreGrid() {
       </div>
 
       {/* Today's Update */}
-      <div className="bg-subMain rounded-2xl p-4 shadow-lg flex items-center justify-center flex-col gap-4">
-        <div className=" size-14">
-          <img
-            src="images/newspaper.png"
-            alt="today's update"
-            className=" w-full h-full object-contain mt-1"
-          />
+      <Link to={"/updates"}>
+        <div className="bg-subMain rounded-2xl p-4 shadow-lg flex items-center justify-center flex-col gap-4">
+          <div className=" size-14">
+            <img
+              src="images/newspaper.png"
+              alt="today's update"
+              className=" w-full h-full object-contain mt-1"
+            />
+          </div>
+          <p className="text-base text-primary font-medium"> Update's</p>
         </div>
-        <p className="text-base text-primary font-medium"> Update's</p>
-      </div>
+      </Link>
 
       {/* Deals*/}
       <div className="bg-subMain rounded-2xl p-4 shadow-lg flex items-center justify-center flex-col gap-4">

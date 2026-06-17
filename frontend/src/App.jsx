@@ -2,6 +2,8 @@ import { Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import BottomNavigation from "./components/layout/BottomNavigation";
 import ScammersPage from "./pages/ScammersPage";
+import UpdatesPage from "./pages/UpdatesPage";
+import SingleUpdatePage from "./pages/SingleUpdatePage";
 
 function App() {
   return (
@@ -10,6 +12,8 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/scammers" element={<ScammersPage />} />
+          <Route path="/updates" element={<UpdatesPage />} />
+          <Route path="/updates/:id" element={<SingleUpdatePage />} />
         </Routes>
         <BottomNavigation />
       </div>

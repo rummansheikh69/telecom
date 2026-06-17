@@ -9,7 +9,7 @@ function PageTitle({ link, title }) {
           <IoArrowBackOutline className=" text-2xl text-white " />
         </div>
       </Link>
-      <h1 className=" text-xl font-bold text-white">{title}</h1>
+      <h1 className=" text-xl font-bold text-white truncate">{title}</h1>
     </div>
   );
 }

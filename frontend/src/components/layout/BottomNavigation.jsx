@@ -7,7 +7,7 @@ import { FaRegUser } from "react-icons/fa6";
 
 function BottomNavigation() {
   return (
-    <div className=" w-full h-14 bg-subMain fixed mx-auto bottom-0 left-0 right-0 max-w-md flex items-center px-4 shadow-lg">
+    <div className=" w-full h-14 bg-subMain fixed z-50 mx-auto bottom-0 left-0 right-0 max-w-md flex items-center px-4 shadow-lg">
       <div className=" grid grid-cols-5 gap-4 w-full h-full">
         <NavLink to="/" className="w-full h-full">
           {({ isActive }) => (
@@ -46,16 +46,11 @@ function BottomNavigation() {
         </NavLink>
 
         <NavLink to="/deal" className="w-full h-full">
-          {({ isActive }) => (
-            <div className="  w-full h-full flex items-center justify-center flex-col">
-              <div>
-                <FaCirclePlus
-                  size={44}
-                  className={isActive ? "text-secondary" : " text-textGry"}
-                />
-              </div>
+          <div className="  w-full h-full flex items-center justify-center flex-col">
+            <div>
+              <FaCirclePlus size={44} className="text-secondary" />
             </div>
-          )}
+          </div>
         </NavLink>
 
         <NavLink to="/orders" className="w-full h-full">

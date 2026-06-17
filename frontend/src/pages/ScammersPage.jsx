@@ -14,7 +14,7 @@ function ScammersPage() {
 
   // Dummy data
   const scammerDetails =
-    "This person contacted me through Facebook Marketplace and asked for advance payment. After receiving the payment, he stopped responding and blocked all communication channels. Multiple people have reported similar incidents involving the same phone number and account.";
+    "জীবের মধ্যে সবচেয়ে সম্পূর্ণতা মানুষের। কিন্তু সবচেয়ে অসম্পূর্ণ হয়ে সে জন্মগ্রহণ করে। বাঘ ভালুক তার জীবনযাত্রার পনেরো- আনা মূলধন নিয়ে আসে প্রকৃতির মালখানা থেকে। জীবরঙ্গভূমিতে মানুষ এসে দেখা দেয়";
 
   const MAX_CHARS = 35;
   const shouldTruncate = scammerDetails.length > MAX_CHARS;
@@ -94,7 +94,7 @@ function ScammersPage() {
 
                 {/* Detail of Scammer */}
                 <div className="p-2 bg-main rounded-lg border-l-4 border-textGry mt-2">
-                  <p className="text-sm italic text-textPrimary">
+                  <p className="text-sm italic text-textPrimary ">
                     <q>
                       {expanded || !shouldTruncate
                         ? scammerDetails

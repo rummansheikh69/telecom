@@ -9,7 +9,16 @@ export default {
         secondary: "#285694",
         textPrimary: "#151515",
         textGry: "#8B8C91",
-        light: "#E8E8EA",
+        light: "#E2E2E5",
+      },
+      keyframes: {
+        shimmer: {
+          "0%": { transform: "translateX(-100%)" },
+          "100%": { transform: "translateX(100%)" },
+        },
+      },
+      animation: {
+        shimmer: "shimmer 1.5s infinite",
       },
     },
   },
