@@ -5,16 +5,18 @@ function CoreGrid() {
   return (
     <div className="mt-6 grid grid-cols-3 gap-4">
       {/* Wallet */}
-      <div className="bg-secondary rounded-2xl p-4 shadow-lg flex items-center justify-center flex-col gap-4">
-        <div className=" size-14">
-          <img
-            src="images/wallet.svg"
-            alt="wallet"
-            className=" w-full h-full object-contain"
-          />
+      <Link to={"/wallet"}>
+        <div className="bg-secondary rounded-2xl p-4 shadow-lg flex items-center justify-center flex-col gap-4">
+          <div className=" size-14">
+            <img
+              src="images/wallet.svg"
+              alt="wallet"
+              className=" w-full h-full object-contain"
+            />
+          </div>
+          <p className="text-base text-white font-medium">Wallet</p>
         </div>
-        <p className="text-base text-white font-medium">Wallet</p>
-      </div>
+      </Link>
 
       {/* Today's Update */}
       <Link to={"/updates"}>
@@ -31,12 +33,14 @@ function CoreGrid() {
       </Link>
 
       {/* Deals*/}
-      <div className="bg-subMain rounded-2xl p-4 shadow-lg flex items-center justify-center flex-col gap-4">
-        <div className=" ">
-          <FaCirclePlus size={48} className="text-secondary" />
+      <Link to={"/deals"}>
+        <div className="bg-subMain rounded-2xl p-4 shadow-lg flex items-center justify-center flex-col gap-4">
+          <div className=" ">
+            <FaCirclePlus size={48} className="text-secondary" />
+          </div>
+          <p className="text-base text-primary font-medium"> Deal</p>
         </div>
-        <p className="text-base text-primary font-medium"> Deal</p>
-      </div>
+      </Link>
     </div>
   );
 }
