@@ -51,7 +51,7 @@ function UpdatesPage() {
           </div>
         </Link>
 
-        <NewsSkeleton />
+        {/* <NewsSkeleton /> */}
 
         <div className=" cursor-pointer mx-auto w-28 h-9 flex items-center justify-center bg-light rounded-lg mt-4">
           <h2 className=" text-center text-sm font-medium text-secondary ">
