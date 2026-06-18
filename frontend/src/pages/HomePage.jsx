@@ -7,11 +7,11 @@ import Upcoming from "../components/home/Upcoming";
 
 function HomePage() {
   return (
-    <div className="h-screen w-full bg-main flex flex-col overflow-y-auto">
+    <div className="h-screen w-full bg-main flex flex-col overflow-y-auto pb-16">
       <Header />
 
       {/* 2. Content Container (Shifted Upwards to Overlap) */}
-      <div className="px-4 -mt-10 flex-1">
+      <div className="px-4 -mt-[46px] flex-1">
         {/* Profile Card */}
         <ProfileCard />
 

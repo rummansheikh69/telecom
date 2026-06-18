@@ -4,7 +4,7 @@ import { FiMenu } from "react-icons/fi";
 
 function Header() {
   return (
-    <div className="bg-secondary text-white px-4 pt-6 pb-16 shadow-sm">
+    <div className="bg-secondary text-white px-4 pt-3 pb-16 shadow-sm">
       {/* Top Navbar Row */}
       <div className="flex items-center justify-between gap-3">
         {/* Logo */}

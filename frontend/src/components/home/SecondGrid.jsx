@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function SecondGrid() {
   return (
-    <div className="mt-6 grid grid-cols-4 gap-2">
+    <div className="mt-5 grid grid-cols-4 gap-2">
       {/* Saree */}
       <div className="bg-subMain rounded-2xl p-4 shadow-lg flex items-center justify-center flex-col gap-4">
         <div className=" size-10">
