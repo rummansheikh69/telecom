@@ -19,7 +19,7 @@ function WalletPage() {
       <div className=" pb-16 px-4 mt-4">
         {/* Balance Overview */}
         <div className=" grid grid-cols-2 gap-3 ">
-          <div className=" px-3 py-3 rounded-lg bg-gradient-to-tr from-[#1B3B6F] via-[#285694] to-[#3B71B8]">
+          <div className=" px-3 py-4 rounded-lg bg-gradient-to-tr from-[#1B3B6F] via-[#285694] to-[#3B71B8]">
             <h4 className=" font-bold text-xs tracking-wide uppercase text-gray-200/70">
               Total Balance
             </h4>
@@ -27,7 +27,7 @@ function WalletPage() {
               ৳ 1,234.56
             </h2>
           </div>
-          <div className=" px-3 py-3 rounded-lg bg-gradient-to-br from-[#3B71B8] via-[#2A5E9E] to-[#1E4373]">
+          <div className=" px-3 py-4 rounded-lg bg-gradient-to-br from-[#3B71B8] via-[#2A5E9E] to-[#1E4373]">
             <h4 className=" font-bold text-xs tracking-wide uppercase text-gray-200/70">
               loan Balance
             </h4>
@@ -35,7 +35,7 @@ function WalletPage() {
               ৳ 354.00
             </h2>
           </div>
-          <div className=" px-3 py-3 rounded-lg bg-gradient-to-br from-[#1E5E6B] via-[#16434F] to-[#0D2933]">
+          <div className=" px-3 py-4 rounded-lg bg-gradient-to-br from-[#1E5E6B] via-[#16434F] to-[#0D2933]">
             <h4 className=" font-bold text-xs tracking-wide uppercase text-gray-200/70">
               available Balance
             </h4>
@@ -43,7 +43,7 @@ function WalletPage() {
               ৳ 976.00
             </h2>
           </div>
-          <div className=" px-3 py-3 rounded-lg bg-gradient-to-br from-[#4D3E78] via-[#2F2956] to-[#1C1736]">
+          <div className=" px-3 py-4 rounded-lg bg-gradient-to-br from-[#4D3E78] via-[#2F2956] to-[#1C1736]">
             <h4 className=" font-bold text-xs tracking-wide uppercase text-gray-200/70">
               Frozen Balance
             </h4>
@@ -72,6 +72,23 @@ function WalletPage() {
           </button>
         </div>
         {/* add money and withdraw money button end */}
+
+        {/* take loan pay loan */}
+        <div className=" flex items-center gap-3 mt-4 ">
+          <button className=" flex items-center justify-center w-full gap-2 bg-[#003A7B]  text-white py-2.5 rounded-l-full font-semibold">
+            <div>
+              <PiHandCoins size={20} />
+            </div>
+            <p>Take Loan</p>
+          </button>
+          <button className=" flex items-center justify-center w-full gap-2  bg-[#003A7B] text-white py-2.5 rounded-r-full font-semibold">
+            <div>
+              <TbMoneybagMove size={20} />
+            </div>
+            <p>Pay Loan</p>
+          </button>
+        </div>
+        {/* take loan pay loan end */}
 
         <div className=" w-full border-b border-zinc-300 my-5" />
 
@@ -106,36 +123,6 @@ function WalletPage() {
               <p className=" text-sm text-secondary mt-1.5 ">Scan Code</p>
             </div>
           </div>
-
-          {/* p2p  */}
-          <div className=" w-full h-full flex items-center justify-center">
-            <div className=" flex flex-col items-center">
-              <div className=" size-14 rounded-full bg-subMain border border-zinc-200 shadow-sm flex items-center justify-center">
-                <RiP2pLine size={25} className=" text-secondary" />
-              </div>
-              <p className=" text-sm text-secondary mt-1.5 ">P2P Transfer</p>
-            </div>
-          </div>
-
-          {/* take loan  */}
-          <div className=" w-full h-full flex items-center justify-center">
-            <div className=" flex flex-col items-center">
-              <div className=" size-14 rounded-full bg-subMain border border-zinc-200 shadow-sm flex items-center justify-center">
-                <PiHandCoins size={25} className=" text-secondary" />
-              </div>
-              <p className=" text-sm text-secondary mt-1.5 ">Take Loan</p>
-            </div>
-          </div>
-
-          {/* pay loan  */}
-          <div className=" w-full h-full flex items-center justify-center">
-            <div className=" flex flex-col items-center">
-              <div className=" size-14 rounded-full bg-subMain border border-zinc-200 shadow-sm flex items-center justify-center">
-                <TbMoneybagMove size={25} className=" text-secondary" />
-              </div>
-              <p className=" text-sm text-secondary mt-1.5 ">Pay Loan</p>
-            </div>
-          </div>
         </div>
         {/* shortcut grid end */}
 
@@ -145,7 +132,7 @@ function WalletPage() {
         <div className=" ">
           <h4>Recent Transactions</h4>
 
-          <div className=" mt-2 bg-subMain  rounded-lg ">
+          <div className=" mt-4 bg-subMain  rounded-lg ">
             <div className="">
               <div className=" flex items-center justify-between gap-2 border-b border-zinc-100 px-4 py-4">
                 <div className=" flex items-center gap-3">
@@ -231,7 +218,7 @@ function WalletPage() {
           </div>
 
           {/* view all history button */}
-          <div className=" w-full h-8 mt-2 border-[1.5px] border-secondary/20 bg-subMain/10 rounded-lg flex items-center justify-center cursor-pointer">
+          <div className=" w-full h-10 mt-2 border-[1.5px] border-secondary/20 bg-subMain/10 rounded-lg flex items-center justify-center cursor-pointer">
             <p className=" text-secondary font-medium text-xs ">
               View All History
             </p>

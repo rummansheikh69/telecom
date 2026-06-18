@@ -18,29 +18,9 @@ function CoreGrid() {
         </div>
       </Link>
 
-      {/* Today's Update */}
-      <Link to={"/updates"}>
-        <div className="bg-subMain rounded-2xl p-4 shadow-lg flex items-center justify-center flex-col gap-4">
-          <div className=" size-14">
-            <img
-              src="images/newspaper.png"
-              alt="today's update"
-              className=" w-full h-full object-contain mt-1"
-            />
-          </div>
-          <p className="text-base text-primary font-medium"> Update's</p>
-        </div>
-      </Link>
-
-      {/* Deals*/}
-      <Link to={"/deals"}>
-        <div className="bg-subMain rounded-2xl p-4 shadow-lg flex items-center justify-center flex-col gap-4">
-          <div className=" ">
-            <FaCirclePlus size={48} className="text-secondary" />
-          </div>
-          <p className="text-base text-primary font-medium"> Deal</p>
-        </div>
-      </Link>
+      {/* promotions */}
+      <div className=" col-span-2 bg-subMain rounded-2xl  shadow-md"></div>
+      {/* promotions end */}
     </div>
   );
 }
