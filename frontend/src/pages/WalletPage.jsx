@@ -8,6 +8,8 @@ import { MdOutlineQrCodeScanner } from "react-icons/md";
 import { RiP2pLine } from "react-icons/ri";
 import { PiHandCoins } from "react-icons/pi";
 import { TbMoneybagMove } from "react-icons/tb";
+import { PiWallet } from "react-icons/pi";
+import { TbDeviceMobileUp, TbDeviceMobileDown } from "react-icons/tb";
 
 function WalletPage() {
   return (
@@ -137,11 +139,104 @@ function WalletPage() {
         </div>
         {/* shortcut grid end */}
 
-        <div className=" w-full border-b border-zinc-300 my-5" />
+        <div className=" w-full border-b border-zinc-300 my-4" />
 
         {/* recent transactions */}
         <div className=" ">
           <h4>Recent Transactions</h4>
+
+          <div className=" mt-2 bg-subMain  rounded-lg ">
+            <div className="">
+              <div className=" flex items-center justify-between gap-2 border-b border-zinc-100 px-4 py-4">
+                <div className=" flex items-center gap-3">
+                  <div className=" size-10 rounded-full bg-secondary/10 flex items-center justify-center">
+                    <PiWallet size={25} className=" text-secondary" />
+                  </div>
+                  <div>
+                    <h3 className=" text-textPrimary text-sm font-medium">
+                      Added Money
+                    </h3>
+                    <h4 className=" text-[12.5px]">20/06/2023 at 10:00 am</h4>
+                    <h5 className=" text-[10px]">
+                      TxID: 64f1a2b3c4d5e6f789012345
+                    </h5>
+                  </div>
+                </div>
+
+                <div className="">
+                  <h2 className=" text-green-500 whitespace-nowrap">
+                    + ৳1000.00
+                  </h2>
+                  <div className=" flex items-center justify-center px-2 py-[2px] bg-green-500 rounded-full text-white text-[10px] mt-1 ">
+                    <p>Success</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="">
+              <div className=" flex items-center justify-between gap-2 border-b border-zinc-100 px-4 py-4">
+                <div className=" flex items-center gap-3">
+                  <div className=" size-10 rounded-full bg-red-500/5 flex items-center justify-center">
+                    <TbDeviceMobileUp size={25} className=" text-red-600" />
+                  </div>
+                  <div>
+                    <h3 className=" text-textPrimary text-sm font-medium">
+                      Sent to Rodi
+                    </h3>
+                    <h4 className=" text-[12.5px]">20/06/2023 at 10:00 am</h4>
+                    <h5 className=" text-[10px]">
+                      TxID: 64f1a2b3c4d5e6f789012345
+                    </h5>
+                  </div>
+                </div>
+
+                <div className="">
+                  <h2 className=" text-red-500 whitespace-nowrap">- ৳400.00</h2>
+                  <div className=" flex items-center justify-center px-2 py-[2px] bg-green-500 rounded-full text-white text-[10px] mt-1 ">
+                    <p>Success</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="">
+              <div className=" flex items-center justify-between gap-2  px-4 py-4">
+                <div className=" flex items-center gap-3">
+                  <div className=" size-10 rounded-full bg-textPrimary/5 flex items-center justify-center">
+                    <TbDeviceMobileDown
+                      size={25}
+                      className=" text-textPrimary"
+                    />
+                  </div>
+                  <div>
+                    <h3 className=" text-textPrimary text-sm font-medium">
+                      Added Money
+                    </h3>
+                    <h4 className=" text-[12.5px]">20/06/2023 at 10:00 am</h4>
+                    <h5 className=" text-[10px]">
+                      TxID: 64f1a2b3c4d5e6f789012345
+                    </h5>
+                  </div>
+                </div>
+
+                <div className="">
+                  <h2 className=" text-green-500 whitespace-nowrap">
+                    + ৳1000.00
+                  </h2>
+                  <div className=" flex items-center justify-center px-2 py-[2px] bg-green-500 rounded-full text-white text-[10px] mt-1 ">
+                    <p>Success</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* view all history button */}
+          <div className=" w-full h-8 mt-2 border-[1.5px] border-secondary/20 bg-subMain/10 rounded-lg flex items-center justify-center cursor-pointer">
+            <p className=" text-secondary font-medium text-xs ">
+              View All History
+            </p>
+          </div>
+          {/* view all history button end */}
         </div>
         {/* recent transactions end */}
       </div>
