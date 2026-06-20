@@ -7,6 +7,7 @@ import { GoStarFill } from "react-icons/go";
 import { TbMailFilled } from "react-icons/tb";
 import { FaCartShopping } from "react-icons/fa6";
 import { TbClipboardListFilled } from "react-icons/tb";
+import { Link } from "react-router-dom";
 
 function ThirdGrid() {
   return (
@@ -88,12 +89,14 @@ function ThirdGrid() {
       </div>
 
       {/* reviews */}
-      <div className="bg-subMain rounded-2xl p-2 pt-3 shadow-lg flex items-center justify-center flex-col gap-1.5">
-        <div className=" size-8 flex items-center justify-center">
-          <GoStarFill size={32} className=" text-secondary" />
+      <Link to="/reviews">
+        <div className="bg-subMain rounded-2xl p-2 pt-3 shadow-lg flex items-center justify-center flex-col gap-1.5">
+          <div className=" size-8 flex items-center justify-center">
+            <GoStarFill size={32} className=" text-secondary" />
+          </div>
+          <p className="text-sm text-primary font-medium">Reviews</p>
         </div>
-        <p className="text-sm text-primary font-medium">Reviews</p>
-      </div>
+      </Link>
     </div>
   );
 }

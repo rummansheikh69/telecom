@@ -29,7 +29,11 @@ function Star({ fillPercentage }) {
   );
 }
 
-export default function Stars({ rating = 0, reviewCount = 0 }) {
+export default function Stars({
+  rating = 0,
+  reviewCount = 0,
+  countShow = true,
+}) {
   const stars = [];
 
   for (let i = 1; i <= 5; i++) {
@@ -48,9 +52,11 @@ export default function Stars({ rating = 0, reviewCount = 0 }) {
   return (
     <div className="flex items-center gap-2">
       <div className="flex gap-1">{stars}</div>
-      <span className="text-sm text-gray-600">
-        {rating?.toFixed(1)} ({reviewCount})
-      </span>
+      {countShow && (
+        <span className="text-sm text-gray-600">
+          {rating?.toFixed(1)} ({reviewCount})
+        </span>
+      )}
     </div>
   );
 }

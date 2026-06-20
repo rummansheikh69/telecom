@@ -5,6 +5,7 @@ import ScammersPage from "./pages/ScammersPage";
 import UpdatesPage from "./pages/UpdatesPage";
 import SingleUpdatePage from "./pages/SingleUpdatePage";
 import WalletPage from "./pages/WalletPage";
+import ReviewsPage from "./pages/ReviewsPage";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/updates" element={<UpdatesPage />} />
           <Route path="/updates/:id" element={<SingleUpdatePage />} />
           <Route path="/wallet" element={<WalletPage />} />
+          <Route path="/reviews" element={<ReviewsPage />} />
         </Routes>
         <BottomNavigation />
       </div>
