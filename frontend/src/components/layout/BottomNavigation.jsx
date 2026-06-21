@@ -7,7 +7,7 @@ import { FaRegUser } from "react-icons/fa6";
 
 function BottomNavigation() {
   return (
-    <div className=" w-full h-14 bg-subMain fixed z-50 mx-auto bottom-0 left-0 right-0 max-w-md flex items-center px-4 shadow-lg">
+    <div className=" w-full h-14 bg-subMain fixed z-40 mx-auto bottom-0 left-0 right-0 max-w-md flex items-center px-4 shadow-lg">
       <div className=" grid grid-cols-5 gap-4 w-full h-full">
         <NavLink to="/" className="w-full h-full">
           {({ isActive }) => (

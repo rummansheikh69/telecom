@@ -63,7 +63,7 @@ function CoreGrid() {
   );
 
   return (
-    <div className="mt-5 grid grid-cols-1 md:grid-cols-3 gap-4">
+    <div className="mt-5 grid grid-cols-3 gap-4">
       {/* Wallet */}
       <Link to={"/wallet"} className="w-full">
         <div className="bg-secondary rounded-2xl p-4 shadow-lg flex items-center justify-center flex-col gap-4 h-40">

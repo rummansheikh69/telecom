@@ -53,7 +53,7 @@ export default function Stars({
     <div className="flex items-center gap-2">
       <div className="flex gap-1">{stars}</div>
       {countShow && (
-        <span className="text-sm text-gray-600">
+        <span className="text-sm text-gray-600 whitespace-nowrap">
           {rating?.toFixed(1)} ({reviewCount})
         </span>
       )}

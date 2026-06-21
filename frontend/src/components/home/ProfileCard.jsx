@@ -15,9 +15,9 @@ function ProfileCard() {
       {/* </div> */}
       {/* credit card icon end */}
 
-      <div className="flex items-center gap-2.5 w-full ">
+      <div className="flex items-center gap-2 w-full ">
         {/* Avatar */}
-        <div className="w-16 h-16 rounded-full border-2 border-secondary p-[2px] bg-gray-200 flex-shrink-0 relative">
+        <div className="w-14 h-14 rounded-full border-2 border-secondary p-[2px] bg-gray-200 flex-shrink-0 relative">
           {/* verify badge  */}
           <VscVerifiedFilled className=" absolute -top-1 bg-white rounded-full  right-0 mx-auto text-secondary size-5" />
           {/* verify badge end */}
@@ -27,17 +27,17 @@ function ProfileCard() {
             className="w-full h-full object-cover rounded-full"
           />
         </div>
-        <div className=" gap-2 flex justify-between ">
+        <div className=" gap-1 flex justify-between ">
           {/* User Info */}
           <div className=" ">
             <h2 className="text-lg font-bold text-gray-800">Md Rony Khan</h2>
-            <p className="text-sm font-semibold text-gray-600">
+            <p className="text-sm font-semibold text-gray-600 whitespace-nowrap">
               BALANCE: 1000.00৳
             </p>
             <Stars rating={4.5} reviewCount={120} />
           </div>
 
-          <div className=" ml-4  ">
+          <div className=" ml-2 sm:ml-6 mt-1  ">
             <Link to={"/levels"}>
               <p>
                 LV: <span>1</span>
@@ -45,10 +45,10 @@ function ProfileCard() {
             </Link>
 
             <p className=" text-sm">
-              UID: <span className=" uppercase">u10132</span>
+              UID: <span className=" uppercase">u1013</span>
             </p>
 
-            <div className=" flex items-center gap-1.5">
+            <div className=" flex items-center gap-1">
               <p className=" uppercase text-sm text-textPrimary font-light">
                 b(100)
               </p>
