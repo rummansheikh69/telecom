@@ -9,6 +9,7 @@ import { FiTrash2 } from "react-icons/fi";
 import ReviewCard from "../components/reviews/ReviewCard";
 import DeleteReviewModal from "../components/modals/DeleteReviewModal";
 import EditReviewModal from "../components/modals/EditReviewModal";
+import ReviewSkeleton from "../components/skeletons/reviewPage/ReviewSkeleton";
 
 function ReviewsPage() {
   const [section, setSection] = useState("reviews");
@@ -106,6 +107,8 @@ function ReviewsPage() {
             ))}
           </div>
           {/* reviews card end */}
+
+          {/* <ReviewSkeleton /> */}
 
           {/* edit review modal */}
           <EditReviewModal />
