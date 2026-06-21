@@ -10,6 +10,7 @@ import { PiHandCoins } from "react-icons/pi";
 import { TbMoneybagMove } from "react-icons/tb";
 import { PiWallet } from "react-icons/pi";
 import { TbDeviceMobileUp, TbDeviceMobileDown } from "react-icons/tb";
+import { Link } from "react-router-dom";
 
 function WalletPage() {
   return (
@@ -58,12 +59,14 @@ function WalletPage() {
 
         {/* add money and withdraw money button */}
         <div className=" flex items-center gap-3 ">
-          <button className=" flex items-center justify-center w-full gap-2 bg-[#003A7B] text-white py-2.5 rounded-full font-semibold">
-            <div>
-              <FiPlusCircle size={20} />
-            </div>
-            <p>Add Money</p>
-          </button>
+          <Link to="/add-money" className=" w-full">
+            <button className=" flex items-center justify-center w-full gap-2 bg-[#003A7B] text-white py-2.5 rounded-full font-semibold">
+              <div>
+                <FiPlusCircle size={20} />
+              </div>
+              <p>Add Money</p>
+            </button>
+          </Link>
           <button className=" flex items-center justify-center w-full gap-2 bg-[#d2d6da] text-secondary py-2.5 rounded-full font-semibold">
             <div>
               <BiMoneyWithdraw size={20} />

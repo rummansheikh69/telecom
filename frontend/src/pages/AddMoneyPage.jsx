@@ -14,7 +14,7 @@ import {
   FileText,
   Calendar,
   Layers,
-  Edit2, // Added Lucide icon for the mobile pen button
+  Edit2,
 } from "lucide-react";
 
 export default function AddMoneyPage() {
@@ -81,10 +81,50 @@ export default function AddMoneyPage() {
     if (targetStep === 3 && isStep2Valid()) setStep(3);
   };
 
-  const handleCopyText = (text, fieldName) => {
-    navigator.clipboard.writeText(text);
-    setCopiedField(fieldName);
-    setTimeout(() => setCopiedField(null), 2000);
+  // Cross-platform bulletproof mobile copy system
+  const handleCopyText = (text, fieldIdentifier) => {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard
+        .writeText(text)
+        .then(() => {
+          setCopiedField(fieldIdentifier);
+          setTimeout(() => setCopiedField(null), 2000);
+        })
+        .catch(() => fallbackCopyText(text, fieldIdentifier));
+    } else {
+      fallbackCopyText(text, fieldIdentifier);
+    }
+  };
+
+  const fallbackCopyText = (text, fieldIdentifier) => {
+    const textArea = document.createElement("textarea");
+    textArea.value = text;
+    // Hide away layout elements gracefully
+    textArea.style.position = "fixed";
+    textArea.style.top = "0";
+    textArea.style.left = "0";
+    textArea.style.width = "2em";
+    textArea.style.height = "2em";
+    textArea.style.padding = "0";
+    textArea.style.border = "none";
+    textArea.style.outline = "none";
+    textArea.style.boxShadow = "none";
+    textArea.style.background = "transparent";
+
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+    textArea.setSelectionRange(0, 99999); // Mobile Safari setup requirement
+
+    try {
+      document.execCommand("copy");
+      setCopiedField(fieldIdentifier);
+      setTimeout(() => setCopiedField(null), 2000);
+    } catch (err) {
+      console.error("Fallback execution copy failed", err);
+    }
+
+    document.body.removeChild(textArea);
   };
 
   const handleScreenshotUpload = (e) => {
@@ -142,9 +182,8 @@ export default function AddMoneyPage() {
     <div className="bg-main min-h-screen flex flex-col justify-between font-sans">
       <div>
         <PageTitle
-          link={step === 1 ? "/profile" : undefined}
+          link={step === 1 ? "/" : step === 4 ? "/" : undefined}
           title="Add Money"
-          onClick={step > 1 && step < 4 ? () => setStep(step - 1) : undefined}
         />
 
         {step < 4 && (
@@ -289,7 +328,7 @@ export default function AddMoneyPage() {
                     className={`p-4 rounded-xl text-white text-xs space-y-2.5 leading-relaxed ${currentTheme.bg}`}
                   >
                     <li className="list-none font-semibold">
-                      ১. আপনার {selectedMethod} ওয়ালেটে বা অ্যাপে প্রবেশ করুন।
+                      ১. আপনার {selectedMethod} ওয়ালেটে বা অ্যাপে প্রবেশ করুন।
                     </li>
                     <div className="border-b border-white/20 w-full" />
                     <li className="list-none">
@@ -308,10 +347,10 @@ export default function AddMoneyPage() {
                         onClick={() =>
                           handleCopyText(currentTheme.num, "gateway")
                         }
-                        className="bg-white/20 p-1 rounded hover:bg-white/30 transition"
+                        className="bg-white/20 p-1 rounded hover:bg-white/30 transition flex items-center justify-center min-w-6 min-h-6"
                       >
                         {copiedField === "gateway" ? (
-                          <Check className="w-3 h-3" />
+                          <Check className="w-3 h-3 text-green-300" />
                         ) : (
                           <Copy className="w-3 h-3" />
                         )}
@@ -323,11 +362,11 @@ export default function AddMoneyPage() {
                     </li>
                     <div className="border-b border-white/20 w-full" />
                     <li className="list-none">
-                      ৫. পিন কোড দিয়ে লেনদেনটি সম্পন্ন করুন।
+                      ৫. পিন কোড দিয়ে লেনদেনটি সম্পন্ন করুন।
                     </li>
                     <div className="border-b border-white/20 w-full" />
                     <li className="list-none font-medium text-amber-100">
-                      ৬. সফলভাবে সম্পন্ন হওয়ার পর প্রাপ্ত ট্রানজেকশন আইডিটি কপি
+                      ৬. সফলভাবে সম্পন্ন হওয়ার পর প্রাপ্ত ট্রানজেকশন আইডিটি কপি
                       করে উপরের বক্সে পেস্ট করুন এবং নিচে স্ক্রিনশট সংযুক্ত
                       করুন।
                     </li>
@@ -336,6 +375,12 @@ export default function AddMoneyPage() {
                   <div className="space-y-3">
                     {mockBanks.map((bank) => {
                       const isExpanded = openBankId === bank.id;
+
+                      // Generated dynamic specific field identifiers
+                      const titleId = `${bank.id}-title`;
+                      const accountId = `${bank.id}-account`;
+                      const routingId = `${bank.id}-routing`;
+
                       return (
                         <div
                           key={bank.id}
@@ -359,6 +404,7 @@ export default function AddMoneyPage() {
 
                           {isExpanded && (
                             <div className="p-3 bg-white border-t border-slate-100 space-y-2 text-[11px] font-medium text-slate-600 animate-fadeIn">
+                              {/* Title Section */}
                               <div className="flex justify-between items-center py-1 border-b border-slate-50">
                                 <span>Account Title:</span>
                                 <div className="flex items-center gap-1.5 font-semibold text-slate-800">
@@ -366,14 +412,20 @@ export default function AddMoneyPage() {
                                   <button
                                     type="button"
                                     onClick={() =>
-                                      handleCopyText(bank.title, "bt")
+                                      handleCopyText(bank.title, titleId)
                                     }
-                                    className="text-slate-400"
+                                    className="text-slate-400 hover:text-[#073E7D] p-1 transition"
                                   >
-                                    <Copy className="w-3 h-3" />
+                                    {copiedField === titleId ? (
+                                      <Check className="w-3 h-3 text-green-500" />
+                                    ) : (
+                                      <Copy className="w-3 h-3" />
+                                    )}
                                   </button>
                                 </div>
                               </div>
+
+                              {/* Account Number Section */}
                               <div className="flex justify-between items-center py-1 border-b border-slate-50">
                                 <span>Account Number:</span>
                                 <div className="flex items-center gap-1.5 font-mono font-bold text-slate-800">
@@ -381,14 +433,20 @@ export default function AddMoneyPage() {
                                   <button
                                     type="button"
                                     onClick={() =>
-                                      handleCopyText(bank.account, "ba")
+                                      handleCopyText(bank.account, accountId)
                                     }
-                                    className="text-slate-400"
+                                    className="text-slate-400 hover:text-[#073E7D] p-1 transition"
                                   >
-                                    <Copy className="w-3 h-3" />
+                                    {copiedField === accountId ? (
+                                      <Check className="w-3 h-3 text-green-500" />
+                                    ) : (
+                                      <Copy className="w-3 h-3" />
+                                    )}
                                   </button>
                                 </div>
                               </div>
+
+                              {/* Routing Number Section */}
                               <div className="flex justify-between items-center py-1 border-b border-slate-50">
                                 <span>Routing Number:</span>
                                 <div className="flex items-center gap-1.5 font-mono font-bold text-slate-800">
@@ -396,14 +454,22 @@ export default function AddMoneyPage() {
                                   <button
                                     type="button"
                                     onClick={() =>
-                                      handleCopyText(bank.routingNumber, "br")
+                                      handleCopyText(
+                                        bank.routingNumber,
+                                        routingId,
+                                      )
                                     }
-                                    className="text-slate-400"
+                                    className="text-slate-400 hover:text-[#073E7D] p-1 transition"
                                   >
-                                    <Copy className="w-3 h-3" />
+                                    {copiedField === routingId ? (
+                                      <Check className="w-3 h-3 text-green-500" />
+                                    ) : (
+                                      <Copy className="w-3 h-3" />
+                                    )}
                                   </button>
                                 </div>
                               </div>
+
                               <div className="flex justify-between items-center py-1 text-slate-500">
                                 <span>Branch:</span>
                                 <span className="font-semibold text-slate-700">
@@ -433,7 +499,6 @@ export default function AddMoneyPage() {
                 />
 
                 {screenshot ? (
-                  /* Fixed Mobile View Box with absolute action icon wrapper (no hover required) */
                   <div className="relative rounded-xl overflow-hidden border border-slate-200 max-w-xs mx-auto aspect-video bg-slate-50 shadow-inner animate-scaleIn">
                     <img
                       src={screenshot}
@@ -441,7 +506,6 @@ export default function AddMoneyPage() {
                       className="w-full h-full object-cover"
                     />
 
-                    {/* Top Right Thumb-Friendly Pen Trigger Button */}
                     <button
                       type="button"
                       onClick={() => fileInputRef.current.click()}
