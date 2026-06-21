@@ -10,6 +10,7 @@ import ProfilePage from "./pages/ProfilePage";
 import PersonalInfortmationPage from "./pages/PersonalInfortmationPage";
 import AddressPage from "./pages/AddressPage";
 import SecurityPage from "./pages/SecurityPage";
+import AddMoneyPage from "./pages/AddMoneyPage";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="/personal-info" element={<PersonalInfortmationPage />} />
           <Route path="/address" element={<AddressPage />} />
           <Route path="/security" element={<SecurityPage />} />
+          <Route path="/add-money" element={<AddMoneyPage />} />
         </Routes>
         <BottomNavigation />
       </div>

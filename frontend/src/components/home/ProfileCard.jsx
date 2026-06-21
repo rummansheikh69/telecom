@@ -61,9 +61,11 @@ function ProfileCard() {
       </div>
       {/* Action Buttons */}
       <div className="flex items-center gap-3 w-full mt-4">
-        <button className="bg-secondary text-white py-2.5 px-4 rounded-xl font-medium shadow-sm hover:bg-secondary/95 transition w-6/12">
-          Add Balance
-        </button>
+        <Link to="/add-money" className="w-6/12">
+          <button className="bg-secondary text-white py-2.5 px-4 rounded-xl font-medium shadow-sm hover:bg-secondary/95 transition w-full">
+            Add Balance
+          </button>
+        </Link>
         <button className="bg-secondary text-white py-2.5 px-4 rounded-xl font-medium shadow-sm hover:bg-secondary/95 transition w-4/12">
           P to P
         </button>
