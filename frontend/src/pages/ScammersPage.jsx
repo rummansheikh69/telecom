@@ -23,7 +23,7 @@ function ScammersPage() {
     <div className=" bg-main h-screen max-h-screen overflow-y-scroll">
       <PageTitle link={"/"} title={"Scammer Community"} />
 
-      <div className=" mt-4 px-4">
+      <div className=" pb-16 mt-4 px-4">
         <div className=" relative w-full">
           <input
             type="text"

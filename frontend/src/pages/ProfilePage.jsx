@@ -21,43 +21,53 @@ function ProfilePage() {
         <div className=" mt-4 rounded-xl bg-subMain border border-textGry/30">
           {/* personal information  */}
           <Link to="/personal-info">
-            <div className=" p-3 border-b border-textGry/20 flex items-center justify-between">
-              <div className=" flex items-center gap-2.5">
-                <div className=" size-10 rounded-lg flex items-center justify-center bg-secondary/10">
-                  <FiUser className=" text-secondary" size={20} />
+            <div className="border-b border-textGry/20">
+              <div className="  p-3 active:scale-95 transition flex items-center justify-between">
+                <div className=" flex items-center gap-2.5">
+                  <div className=" size-10 rounded-lg flex items-center justify-center bg-secondary/10">
+                    <FiUser className=" text-secondary" size={20} />
+                  </div>
+                  <h2 className=" text-base font-medium text-textPrimary/70">
+                    Personal Information
+                  </h2>
                 </div>
-                <h2 className=" text-base font-medium text-textPrimary/70">
-                  Personal Information
-                </h2>
-              </div>
 
-              <div>
-                <IoIosArrowForward size={20} className=" text-textPrimary/70" />
+                <div>
+                  <IoIosArrowForward
+                    size={20}
+                    className=" text-textPrimary/70"
+                  />
+                </div>
               </div>
             </div>
           </Link>
 
           {/* my orders  */}
           <Link to="/orders">
-            <div className=" p-3 border-b border-textGry/20 flex items-center justify-between">
-              <div className=" flex items-center gap-2.5">
-                <div className=" size-10 rounded-lg flex items-center justify-center bg-red-500/10">
-                  <MdOutlineShoppingBag className=" text-red-500" size={20} />
+            <div className="border-b border-textGry/20">
+              <div className=" p-3 active:scale-95 transition flex items-center justify-between">
+                <div className=" flex items-center gap-2.5">
+                  <div className=" size-10 rounded-lg flex items-center justify-center bg-red-500/10">
+                    <MdOutlineShoppingBag className=" text-red-500" size={20} />
+                  </div>
+                  <h2 className=" text-base font-medium text-textPrimary/70">
+                    My Orders
+                  </h2>
                 </div>
-                <h2 className=" text-base font-medium text-textPrimary/70">
-                  My Orders
-                </h2>
-              </div>
 
-              <div>
-                <IoIosArrowForward size={20} className=" text-textPrimary/70" />
+                <div>
+                  <IoIosArrowForward
+                    size={20}
+                    className=" text-textPrimary/70"
+                  />
+                </div>
               </div>
             </div>
           </Link>
 
           {/* address  */}
           <Link to="/address">
-            <div className=" p-3  flex items-center justify-between">
+            <div className=" p-3 active:scale-95 transition flex items-center justify-between">
               <div className=" flex items-center gap-2.5">
                 <div className=" size-10 rounded-lg flex items-center justify-center bg-green-500/20">
                   <HiOutlineLocationMarker
@@ -85,20 +95,22 @@ function ProfilePage() {
 
         <div className=" mt-4 rounded-xl bg-subMain border border-textGry/30">
           {/* Security */}
-          <div className=" p-3  flex items-center justify-between">
-            <div className=" flex items-center gap-2.5">
-              <div className=" size-10 rounded-lg flex items-center justify-center bg-secondary/10">
-                <GoShieldLock className=" text-secondary" size={20} />
+          <Link to="/security">
+            <div className=" p-3 active:scale-95 transition flex items-center justify-between">
+              <div className=" flex items-center gap-2.5">
+                <div className=" size-10 rounded-lg flex items-center justify-center bg-secondary/10">
+                  <GoShieldLock className=" text-secondary" size={20} />
+                </div>
+                <h2 className=" text-base font-medium text-textPrimary/70">
+                  Security
+                </h2>
               </div>
-              <h2 className=" text-base font-medium text-textPrimary/70">
-                Security
-              </h2>
-            </div>
 
-            <div>
-              <IoIosArrowForward size={20} className=" text-textPrimary/70" />
+              <div>
+                <IoIosArrowForward size={20} className=" text-textPrimary/70" />
+              </div>
             </div>
-          </div>
+          </Link>
         </div>
 
         {/* support  */}

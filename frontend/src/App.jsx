@@ -7,6 +7,9 @@ import SingleUpdatePage from "./pages/SingleUpdatePage";
 import WalletPage from "./pages/WalletPage";
 import ReviewsPage from "./pages/ReviewsPage";
 import ProfilePage from "./pages/ProfilePage";
+import PersonalInfortmationPage from "./pages/PersonalInfortmationPage";
+import AddressPage from "./pages/AddressPage";
+import SecurityPage from "./pages/SecurityPage";
 
 function App() {
   return (
@@ -20,6 +23,9 @@ function App() {
           <Route path="/wallet" element={<WalletPage />} />
           <Route path="/reviews" element={<ReviewsPage />} />
           <Route path="/profile" element={<ProfilePage />} />
+          <Route path="/personal-info" element={<PersonalInfortmationPage />} />
+          <Route path="/address" element={<AddressPage />} />
+          <Route path="/security" element={<SecurityPage />} />
         </Routes>
         <BottomNavigation />
       </div>
