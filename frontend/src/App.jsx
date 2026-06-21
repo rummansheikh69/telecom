@@ -6,6 +6,7 @@ import UpdatesPage from "./pages/UpdatesPage";
 import SingleUpdatePage from "./pages/SingleUpdatePage";
 import WalletPage from "./pages/WalletPage";
 import ReviewsPage from "./pages/ReviewsPage";
+import ProfilePage from "./pages/ProfilePage";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/updates/:id" element={<SingleUpdatePage />} />
           <Route path="/wallet" element={<WalletPage />} />
           <Route path="/reviews" element={<ReviewsPage />} />
+          <Route path="/profile" element={<ProfilePage />} />
         </Routes>
         <BottomNavigation />
       </div>
