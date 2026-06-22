@@ -66,7 +66,7 @@ function ProfileCard() {
             Add Balance
           </button>
         </Link>
-        <Link to={"p2p"} className="w-4/12">
+        <Link to={"/p2p"} className="w-4/12">
           <button className="bg-secondary text-white py-2.5 px-4 rounded-xl font-medium shadow-sm hover:bg-secondary/95 transition w-full ">
             P to P
           </button>

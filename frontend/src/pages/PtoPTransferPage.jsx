@@ -157,9 +157,9 @@ export default function P2PTransferFlow() {
   };
 
   return (
-    <div className=" min-h-screen bg-main p-4 font-sans">
+    <div className=" min-h-screen bg-main p-4 font-sans pb-16 flex flex-col">
       {/* Mobile Canvas View Box frame */}
-      <div className="w-full max-w-md h-[844px] bg-subMain shadow-2xl rounded-3xl overflow-hidden flex flex-col relative border border-gray-200">
+      <div className="w-full max-w-md h-full flex-1 bg-subMain shadow-2xl rounded-3xl overflow-hidden flex flex-col relative border border-gray-200">
         {step < 4 && (
           <div className="bg-[#1e5399] text-white px-4 pt-6 pb-4 flex items-center gap-3">
             {step > 1 && (
@@ -284,7 +284,7 @@ export default function P2PTransferFlow() {
 
           {/* ================= STEP 2 ================= */}
           {step === 2 && (
-            <div className="p-4 flex flex-col gap-4 flex-1">
+            <div className="p-4 flex flex-col flex-1 gap-4 ">
               <div className="bg-white p-3 rounded-xl flex items-center gap-3 border border-gray-100 shadow-sm">
                 <div className="w-9 h-9 rounded-full bg-gray-100 flex items-center justify-center overflow-hidden">
                   {searchedUser?.image ? (
@@ -307,7 +307,7 @@ export default function P2PTransferFlow() {
               </div>
 
               <div className="bg-white p-5 rounded-2xl shadow-sm border border-gray-100 flex-1 flex flex-col justify-between">
-                <div className="flex flex-col gap-5">
+                <div className="flex flex-col gap-5 ">
                   <div className="bg-amber-50 border border-amber-200 rounded-xl p-3 text-center">
                     <span className="text-xs text-amber-700 font-medium">
                       Available Balance:{" "}
@@ -358,7 +358,7 @@ export default function P2PTransferFlow() {
                       placeholder="e.g. Dinner split"
                       value={reference}
                       onChange={(e) => setReference(e.target.value)}
-                      className="w-full bg-gray-50 border border-gray-200 rounded-xl py-3 px-4 text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      className="w-full bg-gray-50 border border-gray-200 rounded-xl py-3 mb-4 px-4 text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500"
                     />
                   </div>
                 </div>
@@ -382,7 +382,7 @@ export default function P2PTransferFlow() {
                       parseFloat(amount) > availableBalance
                     }
                     onClick={() => setStep(3)}
-                    className="w-full bg-[#1e5399] text-white font-bold py-3.5 rounded-xl shadow-md hover:bg-blue-700 disabled:bg-gray-300 disabled:cursor-not-allowed transition"
+                    className="w-full bg-secondary text-white font-bold py-3.5 rounded-xl shadow-md hover:bg-blue-700 disabled:bg-gray-300 disabled:cursor-not-allowed transition"
                   >
                     Next Step
                   </button>
@@ -419,7 +419,7 @@ export default function P2PTransferFlow() {
                     </span>
                   </div>
                   <div className="flex justify-between py-3 text-base font-bold border-t-2 border-dashed border-gray-200">
-                    <span className="text-gray-700">Total Outflow</span>
+                    <span className="text-gray-700">Total Amount</span>
                     <span className="text-[#1e5399]">
                       ৳{parseFloat(amount).toFixed(2)}
                     </span>
@@ -456,7 +456,7 @@ export default function P2PTransferFlow() {
               <button
                 disabled={!pin.trim()}
                 onClick={() => setStep(4)}
-                className="w-full bg-green-600 text-white font-bold py-3.5 rounded-xl shadow-lg hover:bg-green-700 disabled:bg-gray-300 transition"
+                className="w-full bg-secondary text-white font-bold py-3.5 rounded-xl shadow-lg hover:bg-secondary/90 disabled:bg-gray-300 transition"
               >
                 Confirm & Send Money
               </button>
@@ -576,18 +576,6 @@ export default function P2PTransferFlow() {
                   <Share2 className="w-6 h-6 fill-current" />
                   <span>Share</span>
                 </button>
-
-                <div className="flex flex-col items-center text-center max-w-[280px]">
-                  <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center mb-1 text-green-600 text-xs font-bold">
-                    ✓
-                  </div>
-                  <p className="text-xs font-bold text-gray-500 uppercase tracking-tight">
-                    To get reward
-                  </p>
-                  <p className="text-xs font-medium text-gray-400 mt-0.5">
-                    More use this feature
-                  </p>
-                </div>
               </div>
 
               <button
