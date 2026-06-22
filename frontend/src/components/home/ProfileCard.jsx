@@ -66,9 +66,11 @@ function ProfileCard() {
             Add Balance
           </button>
         </Link>
-        <button className="bg-secondary text-white py-2.5 px-4 rounded-xl font-medium shadow-sm hover:bg-secondary/95 transition w-4/12">
-          P to P
-        </button>
+        <Link to={"p2p"} className="w-4/12">
+          <button className="bg-secondary text-white py-2.5 px-4 rounded-xl font-medium shadow-sm hover:bg-secondary/95 transition w-full ">
+            P to P
+          </button>
+        </Link>
         <button className="bg-secondary text-white py-2.5 px-4 rounded-xl font-medium shadow-sm hover:bg-secondary/95 transition w-2/12 flex items-center justify-center">
           <FaRegCreditCard className=" text-white" size={24} />
         </button>

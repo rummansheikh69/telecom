@@ -11,6 +11,7 @@ import PersonalInfortmationPage from "./pages/PersonalInfortmationPage";
 import AddressPage from "./pages/AddressPage";
 import SecurityPage from "./pages/SecurityPage";
 import AddMoneyPage from "./pages/AddMoneyPage";
+import P2PTransferFlow from "./pages/PtoPTransferPage";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           <Route path="/address" element={<AddressPage />} />
           <Route path="/security" element={<SecurityPage />} />
           <Route path="/add-money" element={<AddMoneyPage />} />
+          <Route path="/p2p" element={<P2PTransferFlow />} />
         </Routes>
         <BottomNavigation />
       </div>
