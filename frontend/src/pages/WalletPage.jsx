@@ -67,12 +67,14 @@ function WalletPage() {
               <p>Add Money</p>
             </button>
           </Link>
-          <button className=" flex items-center justify-center w-full gap-2 bg-[#d2d6da] text-secondary py-2.5 rounded-full font-semibold">
-            <div>
-              <BiMoneyWithdraw size={20} />
-            </div>
-            <p>Withdraw</p>
-          </button>
+          <Link to="/withdraw" className=" w-full">
+            <button className=" flex items-center justify-center w-full gap-2 bg-[#d2d6da] text-secondary py-2.5 rounded-full font-semibold">
+              <div>
+                <BiMoneyWithdraw size={20} />
+              </div>
+              <p>Withdraw</p>
+            </button>
+          </Link>
         </div>
         {/* add money and withdraw money button end */}
 
