@@ -47,12 +47,14 @@ function ThirdGrid() {
       </div>
 
       {/* inbox */}
-      <div className="bg-subMain rounded-2xl p-2 pt-3 shadow-lg flex items-center justify-center flex-col gap-1.5">
-        <div className=" size-8 flex items-center justify-center">
-          <TbMailFilled size={32} className=" text-secondary" />
+      <Link to="/inbox">
+        <div className="bg-subMain rounded-2xl p-2 pt-3 shadow-lg flex items-center justify-center flex-col gap-1.5">
+          <div className=" size-8 flex items-center justify-center">
+            <TbMailFilled size={32} className=" text-secondary" />
+          </div>
+          <p className="text-sm text-primary font-medium">Inbox</p>
         </div>
-        <p className="text-sm text-primary font-medium">Inbox</p>
-      </div>
+      </Link>
 
       {/* admission */}
       <div className="bg-subMain rounded-2xl p-2 pt-3 shadow-lg flex items-center justify-center flex-col gap-1.5">

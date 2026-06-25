@@ -14,6 +14,8 @@ import AddMoneyPage from "./pages/AddMoneyPage";
 import P2PTransferFlow from "./pages/PtoPTransferPage";
 import WithdrawalFlow from "./pages/WithdrawalFlow";
 import SummaryPage from "./pages/SummaryPage";
+import OrdersPage from "./pages/OrdersPage";
+import InboxPage from "./pages/InboxPage";
 
 function App() {
   return (
@@ -34,6 +36,8 @@ function App() {
           <Route path="/p2p" element={<P2PTransferFlow />} />
           <Route path="/withdraw" element={<WithdrawalFlow />} />
           <Route path="/summery" element={<SummaryPage />} />
+          <Route path="/orders" element={<OrdersPage />} />
+          <Route path="/inbox" element={<InboxPage />} />
         </Routes>
         <BottomNavigation />
       </div>
