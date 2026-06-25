@@ -16,6 +16,7 @@ import WithdrawalFlow from "./pages/WithdrawalFlow";
 import SummaryPage from "./pages/SummaryPage";
 import OrdersPage from "./pages/OrdersPage";
 import InboxPage from "./pages/InboxPage";
+import OrderDetailsPage from "./pages/OrderDetailsPage";
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
           <Route path="/withdraw" element={<WithdrawalFlow />} />
           <Route path="/summery" element={<SummaryPage />} />
           <Route path="/orders" element={<OrdersPage />} />
+          <Route path="/order/:id" element={<OrderDetailsPage />} />
           <Route path="/inbox" element={<InboxPage />} />
         </Routes>
         <BottomNavigation />

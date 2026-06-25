@@ -9,11 +9,22 @@ import {
   Clock,
 } from "lucide-react";
 import PageTitle from "../components/layout/PageTitle";
+import { Link } from "react-router-dom";
 
-// Mock Notification Data containing multiple action types (Orders vs. Wallet)
+// Mock Notification Data containing multiple action types (Orders vs. Wallet vs. Order Received)
 const INITIAL_NOTIFICATIONS = [
   {
-    id: "notif-1",
+    id: "0",
+    type: "order_received", // Added your new requested notification type
+    timestamp: "2026-06-26T00:30:00Z",
+    isRead: false,
+    buyerName: "Asif Rahman",
+    orderDescription:
+      "Placed an order to buy Robi 30 GB Pack. Complete payment validation within 15 minutes.",
+    imagePlaceholder: null,
+  },
+  {
+    id: "1",
     type: "orders",
     timestamp: "2026-06-26T00:12:00Z", // Will format to Dhaka Time
     isRead: false,
@@ -24,7 +35,7 @@ const INITIAL_NOTIFICATIONS = [
       "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=100&auto=format&fit=crop&q=80",
   },
   {
-    id: "notif-2",
+    id: "2",
     type: "wallet",
     action: "RECEIVED_MONEY",
     timestamp: "2026-06-25T22:30:00Z",
@@ -34,7 +45,7 @@ const INITIAL_NOTIFICATIONS = [
     trxId: "TXN8839102K",
   },
   {
-    id: "notif-3",
+    id: "3",
     type: "orders",
     timestamp: "2026-06-25T18:15:00Z",
     isRead: true,
@@ -43,7 +54,7 @@ const INITIAL_NOTIFICATIONS = [
     imagePlaceholder: null,
   },
   {
-    id: "notif-4",
+    id: "4",
     type: "wallet",
     action: "WITHDRAW_MONEY",
     timestamp: "2026-06-25T11:05:00Z",
@@ -62,11 +73,23 @@ export default function InboxPage() {
     setNotifications(notifications.map((n) => ({ ...n, isRead: true })));
   };
 
-  // Mark single notification as read on click
-  const toggleRead = (id) => {
+  // Mark single notification as read on click & redirect conditional pipelines
+  const handleNotificationClick = (notif) => {
+    // 1. Mark as read locally
     setNotifications(
-      notifications.map((n) => (n.id === id ? { ...n, isRead: true } : n)),
+      notifications.map((n) =>
+        n.id === notif.id ? { ...n, isRead: true } : n,
+      ),
     );
+
+    // 2. Open new page if notification is an incoming order request
+    if (notif.type === "order_received") {
+      console.log(
+        `Redirecting to order fulfillment process page for notification context ID: ${notif.id}`,
+      );
+      // When ready for routing, import useNavigate and drop it here:
+      // navigate(`/orders/received/${notif.id}`);
+    }
   };
 
   // Helper function to format ISO timestamps directly to Asia/Dhaka string format
@@ -95,7 +118,7 @@ export default function InboxPage() {
           {notifications.map((notif) => (
             <div
               key={notif.id}
-              onClick={() => toggleRead(notif.id)}
+              onClick={() => handleNotificationClick(notif)}
               className={`p-4 transition cursor-pointer relative ${
                 notif.isRead
                   ? "bg-white hover:bg-slate-50"
@@ -109,36 +132,28 @@ export default function InboxPage() {
 
               {/* MIDDLE ROW: DYNAMIC CONTENT BASED ON NOTIFICATION TYPE */}
               <div className="flex items-start gap-3">
-                {/* --- RENDERING ORDER NOTIFICATION TYPE --- */}
-                {notif.type === "orders" && (
-                  <>
-                    <div className="w-10 h-10 rounded-full bg-slate-100 border border-slate-200 flex items-center justify-center overflow-hidden shrink-0">
-                      {notif.imagePlaceholder ? (
-                        <img
-                          src={notif.imagePlaceholder}
-                          alt="buyer"
-                          className="w-full h-full object-cover"
-                        />
-                      ) : (
-                        <ShoppingBag className="w-5 h-5 text-[#073E7D]" />
-                      )}
-                    </div>
-                    <div className="flex-1 pr-6">
-                      <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider">
-                        Order Update
-                      </h4>
-                      <p className="text-sm font-black text-slate-800 mt-0.5">
-                        Buyer: {notif.buyerName}
-                      </p>
-                      <p className="text-xs text-slate-500 mt-1 font-medium leading-relaxed">
-                        {notif.orderDescription ||
-                          "New P2P telecom trade pipeline instance has been initialized safely."}
-                      </p>
-                    </div>
-                  </>
+                {/* --- RENDERING ORDER OR ORDER_RECEIVED NOTIFICATION TYPE --- */}
+                {(notif.type === "orders" ||
+                  notif.type === "order_received") && (
+                  /* We make the inner contents look completely identical, but conditionally wrapper-link them */
+                  <div className="flex items-start gap-3 w-full">
+                    {/* If it's a new order request, wrap content inside a link block, otherwise render an empty div wrapper instead */}
+                    {notif.type.includes("order") ? (
+                      <Link
+                        to={`/order/${notif.id || "123"}`}
+                        className="flex items-start gap-3 w-full text-left"
+                      >
+                        <NotificationOrderContent notif={notif} />
+                      </Link>
+                    ) : (
+                      <div className="flex items-start gap-3 w-full text-left">
+                        <NotificationOrderContent notif={notif} />
+                      </div>
+                    )}
+                  </div>
                 )}
 
-                {/* --- RENDERING WALLET NOTIFICATION TYPE --- */}
+                {/* --- RENDERING WALLET NOTIFICATION TYPE (Does not link anywhere) --- */}
                 {notif.type === "wallet" && (
                   <>
                     <div
@@ -196,5 +211,36 @@ export default function InboxPage() {
         </div>
       </div>
     </div>
+  );
+}
+
+// Clean sub-render module helper to prevent duplicate code lines
+function NotificationOrderContent({ notif }) {
+  return (
+    <>
+      <div className="w-10 h-10 rounded-full bg-slate-100 border border-slate-200 flex items-center justify-center overflow-hidden shrink-0">
+        {notif.imagePlaceholder ? (
+          <img
+            src={notif.imagePlaceholder}
+            alt="buyer"
+            className="w-full h-full object-cover"
+          />
+        ) : (
+          <ShoppingBag className="w-5 h-5 text-[#073E7D]" />
+        )}
+      </div>
+      <div className="flex-1 pr-6">
+        <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider">
+          {notif.type === "order_received" ? "New Order" : "Order Update"}
+        </h4>
+        <p className="text-sm font-black text-slate-800 mt-0.5">
+          Buyer: {notif.buyerName}
+        </p>
+        <p className="text-xs text-slate-500 mt-1 font-medium leading-relaxed">
+          {notif.orderDescription ||
+            "New P2P telecom trade pipeline instance has been initialized safely."}
+        </p>
+      </div>
+    </>
   );
 }
