@@ -13,12 +13,14 @@ function ThirdGrid() {
   return (
     <div className="mt-6 grid grid-cols-5 gap-2">
       {/* summery */}
-      <div className="bg-subMain rounded-2xl p-2 pt-3 shadow-lg flex items-center justify-center flex-col gap-1.5">
-        <div className="  flex items-center justify-center">
-          <TbClipboardListFilled size={34} className=" text-secondary" />
+      <Link to="/summery">
+        <div className="bg-subMain rounded-2xl p-2 pt-3 shadow-lg flex items-center justify-center flex-col gap-1.5">
+          <div className="  flex items-center justify-center">
+            <TbClipboardListFilled size={34} className=" text-secondary" />
+          </div>
+          <p className="text-sm text-primary font-medium">Summery</p>
         </div>
-        <p className="text-sm text-primary font-medium">Summery</p>
-      </div>
+      </Link>
 
       {/* orders */}
       <div className="bg-subMain rounded-2xl p-2 pt-3 shadow-lg flex items-center justify-center flex-col gap-1.5">
