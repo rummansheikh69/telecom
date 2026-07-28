@@ -98,7 +98,7 @@ export default function OrdersPage() {
               Ongoing Orders
             </h1>
             <p className="text-[11px] text-blue-200 font-medium">
-              Active P2P Trades & Telecom Packs
+              Active Trades
             </p>
           </div>
           <span className="bg-amber-500 text-white text-xs font-bold px-2.5 py-1 rounded-full animate-pulse">

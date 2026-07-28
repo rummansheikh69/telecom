@@ -18,6 +18,8 @@ import OrdersPage from "./pages/OrdersPage";
 import InboxPage from "./pages/InboxPage";
 import OrderDetailsPage from "./pages/OrderDetailsPage";
 import TopupScreen from "./pages/TopupScreen";
+import HelplinePage from "./pages/HelplinePage";
+import AppStorePage from "./pages/AppStorePage";
 
 function App() {
   return (
@@ -42,6 +44,8 @@ function App() {
           <Route path="/order/:id" element={<OrderDetailsPage />} />
           <Route path="/inbox" element={<InboxPage />} />
           <Route path="/topup" element={<TopupScreen />} />
+          <Route path="/helpline" element={<HelplinePage />} />
+          <Route path="/apps" element={<AppStorePage />} />
         </Routes>
         <BottomNavigation />
       </div>

@@ -18,16 +18,18 @@ function Upcoming() {
       </Link>
 
       {/* app store */}
-      <div className="bg-subMain rounded-2xl p-4  shadow-lg flex items-center justify-center flex-col gap-1.5">
-        <div className=" size-14">
-          <img
-            src="images/app.png"
-            alt="wallet"
-            className=" w-full h-full object-contain opacity-80"
-          />
+      <Link to={"/apps"}>
+        <div className="bg-subMain rounded-2xl p-4  shadow-lg flex items-center justify-center flex-col gap-1.5">
+          <div className=" size-14">
+            <img
+              src="images/app.png"
+              alt="wallet"
+              className=" w-full h-full object-contain opacity-80"
+            />
+          </div>
+          <p className="text-base text-primary font-medium">App Store</p>
         </div>
-        <p className="text-base text-primary font-medium">App Store</p>
-      </div>
+      </Link>
 
       {/* investment */}
       <div className="bg-subMain rounded-2xl p-4  shadow-lg flex items-center justify-center flex-col gap-1.5">

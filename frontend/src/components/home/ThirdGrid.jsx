@@ -73,12 +73,14 @@ function ThirdGrid() {
       </div>
 
       {/* helpline */}
-      <div className="bg-subMain rounded-2xl p-2 pt-3 shadow-lg flex items-center justify-center flex-col gap-1.5">
-        <div className=" size-8 flex items-center justify-center">
-          <PiPhoneCallFill size={32} className=" text-secondary" />
+      <Link to="/helpline">
+        <div className="bg-subMain rounded-2xl p-2 pt-3 shadow-lg flex items-center justify-center flex-col gap-1.5">
+          <div className=" size-8 flex items-center justify-center">
+            <PiPhoneCallFill size={32} className=" text-secondary" />
+          </div>
+          <p className="text-sm text-primary font-medium">Helpline</p>
         </div>
-        <p className="text-sm text-primary font-medium">Helpline</p>
-      </div>
+      </Link>
 
       {/* rules */}
       <div className="bg-subMain rounded-2xl p-2 pt-3 shadow-lg flex items-center justify-center flex-col gap-1.5">

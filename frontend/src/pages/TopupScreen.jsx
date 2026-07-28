@@ -92,9 +92,9 @@ export default function TopupScreen() {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-100 p-4 font-sans">
+    <div className="min-h-screen bg-main p-4 font-sans pb-16 flex flex-col">
       {/* Mobile Shell Container */}
-      <div className="w-full max-w-md h-[844px] bg-[#f4f6f9] shadow-2xl rounded-[32px] overflow-hidden flex flex-col relative border border-gray-200">
+      <div className="w-full max-w-md flex-1 bg-[#f4f6f9] shadow-2xl rounded-[32px] overflow-hidden flex flex-col relative border border-gray-200">
         {/* TOP HEADER NAVIGATION BAR */}
         {step < 4 && (
           <div className="bg-[#073E7D] text-white px-4 pt-6 pb-4 flex items-center gap-3">
@@ -120,7 +120,7 @@ export default function TopupScreen() {
           {/* STEP 1: PHONE NUMBER INPUT ONBOARDING                     */}
           {/* ========================================================= */}
           {step === 1 && (
-            <div className="p-5 flex flex-col justify-between flex-1">
+            <div className="p-5 flex flex-col justify-between flex-1 ">
               <div className="space-y-4">
                 <div className="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm">
                   <label className="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">
