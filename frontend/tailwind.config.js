@@ -11,6 +11,7 @@ export default {
         textGry: "#8B8C91",
         light: "#E2E2E5",
         darkLight: "#DCE0E4",
+        border: "#D4D4D8",
       },
       keyframes: {
         shimmer: {

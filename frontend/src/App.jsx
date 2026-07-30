@@ -20,6 +20,13 @@ import OrderDetailsPage from "./pages/OrderDetailsPage";
 import TopupScreen from "./pages/TopupScreen";
 import HelplinePage from "./pages/HelplinePage";
 import AppStorePage from "./pages/AppStorePage";
+import AdminDashboardPage from "./pages/dashboard/admin/AdminDashboardPage";
+import PromotionsAdminPage from "./pages/dashboard/admin/PromotionsAdminPage";
+import HelplineAdminPage from "./pages/dashboard/admin/HelplineAdminPage";
+import UpdatesAdminPage from "./pages/dashboard/admin/UpdatesAdminPage";
+import AppStoreAdminPage from "./pages/dashboard/admin/AppStoreAdminPage";
+import ScammersAdminPage from "./pages/dashboard/admin/ScammersAdminPage";
+import TopupAdminPage from "./pages/dashboard/admin/TopupAdminPage";
 
 function App() {
   return (
@@ -46,6 +53,16 @@ function App() {
           <Route path="/topup" element={<TopupScreen />} />
           <Route path="/helpline" element={<HelplinePage />} />
           <Route path="/apps" element={<AppStorePage />} />
+
+          {/* Admin Routes */}
+          <Route path="/dashboard" element={<AdminDashboardPage />} />
+          <Route path="/promo" element={<PromotionsAdminPage />} />
+          <Route path="/helpline-admin" element={<HelplineAdminPage />} />
+          <Route path="/updates-admin" element={<UpdatesAdminPage />} />
+          <Route path="/apps-admin" element={<AppStoreAdminPage />} />
+          <Route path="/scammers-admin" element={<ScammersAdminPage />} />
+          <Route path="/topup-logs" element={<TopupAdminPage />} />
+          {/* Admin Routes ends*/}
         </Routes>
         <BottomNavigation />
       </div>
