@@ -190,11 +190,8 @@ export default function AdminLayout({ userRole = "ceo", children }) {
           {/* Header Bar */}
           <header className="h-14 bg-white border-b border-slate-200 px-4 flex items-center justify-between shrink-0 z-10">
             <div className="flex items-center gap-2">
-              <div className="w-7 h-7 rounded-lg bg-[#073E7D] text-white flex items-center justify-center font-black text-xs shadow-sm">
-                S2P
-              </div>
               <span className="font-extrabold text-xs tracking-wider text-slate-800 uppercase">
-                Star2Pay Admin
+                Control Panel
               </span>
             </div>
 

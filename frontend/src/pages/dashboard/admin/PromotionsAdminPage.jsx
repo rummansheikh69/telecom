@@ -4,6 +4,7 @@ import { Plus, Trash2, Edit, Image as ImageIcon, Sparkles } from "lucide-react";
 import DeletePromotionModal from "../../../components/modals/DeletePromotionModal";
 import EditPromotionModal from "../../../components/modals/EditPromotionModal";
 import AdminLayout from "../../../components/layout/AdminLayout";
+import { Link } from "react-router-dom";
 
 const INITIAL_PROMOTIONS = [
   {
@@ -102,9 +103,11 @@ export default function PromotionsAdminPage({ userRole = "ceo" }) {
                     {promo.title || "Untitled Banner"}
                   </span>
                   {promo.link && (
-                    <span className="bg-white text-slate-900 px-3 py-1 rounded-lg text-[10px] font-bold shadow">
-                      View
-                    </span>
+                    <Link to={promo.link} target="_blank">
+                      <span className="bg-white text-slate-900 px-3 py-1 rounded-lg text-[10px] font-bold shadow">
+                        View
+                      </span>
+                    </Link>
                   )}
                 </div>
               </div>

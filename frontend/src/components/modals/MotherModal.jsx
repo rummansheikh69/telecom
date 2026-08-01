@@ -1,13 +1,23 @@
-// MotherModal.jsx
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
 
 export function MotherModal({ isOpen, onClose, title, children }) {
-  return (
+  // Ensure DOM is mounted before creating portal (Prevents SSR / hydration mismatch)
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null;
+
+  // Render directly into document.body to escape AdminLayout clipping
+  return createPortal(
     <AnimatePresence mode="wait">
       {isOpen && (
         <motion.div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4"
+          className="fixed inset-0 z-[9999] flex items-center justify-center p-4"
           exit={{ opacity: 0 }}
         >
           {/* Backdrop */}
@@ -16,7 +26,7 @@ export function MotherModal({ isOpen, onClose, title, children }) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+            className="fixed inset-0 bg-black/60 backdrop-blur-sm"
             onClick={onClose}
           />
 
@@ -34,10 +44,11 @@ export function MotherModal({ isOpen, onClose, title, children }) {
             className="relative w-full max-w-sm overflow-hidden rounded-2xl bg-white p-6 shadow-2xl border border-slate-100 z-10"
           >
             <div className="flex items-center justify-between">
-              <div></div>
+              <h3 className="text-sm font-bold text-slate-800">{title}</h3>
               <button
+                type="button"
                 onClick={onClose}
-                className="text-slate-400 hover:text-slate-600 text-sm"
+                className="text-slate-400 hover:text-slate-600 text-sm p-1 rounded-lg hover:bg-slate-100 transition"
               >
                 ✕
               </button>
@@ -47,6 +58,7 @@ export function MotherModal({ isOpen, onClose, title, children }) {
           </motion.div>
         </motion.div>
       )}
-    </AnimatePresence>
+    </AnimatePresence>,
+    document.body,
   );
 }

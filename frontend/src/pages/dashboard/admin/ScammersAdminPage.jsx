@@ -16,6 +16,7 @@ const INITIAL_SCAMMERS = [
     photo:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbIUDA_pct4Rlq8LANnoLjtPhBK666h3Zopw&s",
     reportedAt: "4 days ago",
+    reportedBy: "Admin Officer - 0123456789",
   },
   {
     id: "scm-2",
@@ -25,6 +26,7 @@ const INITIAL_SCAMMERS = [
     details: "Fake payment screenshot sent for bulk agent cashout transaction.",
     photo: "https://placehold.co/200x200/073E7D/white?text=Evidence",
     reportedAt: "1 week ago",
+    reportedBy: "Admin Officer - 0123456789",
   },
   {
     id: "scm-3",
@@ -34,6 +36,7 @@ const INITIAL_SCAMMERS = [
     details:
       "Attempted to bypass OTP during merchant login. Be careful while receiving calls claiming to be support.",
     photo: "https://placehold.co/200x200/e2e8f0/64748b?text=Evidence",
+    reportedBy: "Admin Officer - 0123456789",
     reportedAt: "2 weeks ago",
   },
 ];
@@ -189,6 +192,9 @@ export default function ScammersAdminPage({ userRole = "ceo" }) {
 
                       <div className="text-[10px] text-slate-400 font-medium pt-1">
                         Reported - {item.reportedAt}
+                      </div>
+                      <div className="text-[10px] text-slate-400 font-medium leading-0 whitespace-nowrap">
+                        Reported by - {item.reportedBy}
                       </div>
                     </div>
                   </div>
