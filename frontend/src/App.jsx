@@ -27,6 +27,7 @@ import UpdatesAdminPage from "./pages/dashboard/admin/UpdatesAdminPage";
 import AppStoreAdminPage from "./pages/dashboard/admin/AppStoreAdminPage";
 import ScammersAdminPage from "./pages/dashboard/admin/ScammersAdminPage";
 import TopupAdminPage from "./pages/dashboard/admin/TopupAdminPage";
+import DealScreen from "./pages/DealScreen";
 
 function App() {
   return (
@@ -53,6 +54,7 @@ function App() {
           <Route path="/topup" element={<TopupScreen />} />
           <Route path="/helpline" element={<HelplinePage />} />
           <Route path="/apps" element={<AppStorePage />} />
+          <Route path="/deal" element={<DealScreen />} />
 
           {/* Admin Routes */}
           <Route path="/dashboard" element={<AdminDashboardPage />} />
