@@ -80,18 +80,22 @@ function WalletPage() {
 
         {/* take loan pay loan */}
         <div className=" flex items-center gap-3 mt-4 ">
-          <button className=" flex items-center justify-center w-full gap-2 bg-[#003A7B]  text-white py-2.5 rounded-l-full font-semibold">
-            <div>
-              <PiHandCoins size={20} />
-            </div>
-            <p>Take Loan</p>
-          </button>
-          <button className=" flex items-center justify-center w-full gap-2  bg-[#003A7B] text-white py-2.5 rounded-r-full font-semibold">
-            <div>
-              <TbMoneybagMove size={20} />
-            </div>
-            <p>Pay Loan</p>
-          </button>
+          <Link to="/loan" className=" w-full">
+            <button className=" flex items-center justify-center w-full gap-2 bg-[#003A7B]  text-white py-2.5 rounded-l-full font-semibold">
+              <div>
+                <PiHandCoins size={20} />
+              </div>
+              <p>Take Loan</p>
+            </button>
+          </Link>
+          <Link to="/pay-loan" className=" w-full">
+            <button className=" flex items-center justify-center w-full gap-2  bg-[#003A7B] text-white py-2.5 rounded-r-full font-semibold">
+              <div>
+                <TbMoneybagMove size={20} />
+              </div>
+              <p>Pay Loan</p>
+            </button>
+          </Link>
         </div>
         {/* take loan pay loan end */}
 

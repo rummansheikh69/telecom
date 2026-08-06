@@ -31,6 +31,8 @@ import DealScreen from "./pages/DealScreen";
 import AdminAddMoney from "./pages/dashboard/admin/AdminAddMoney";
 import AdminP2PTransactions from "./pages/dashboard/admin/AdminP2PTransactions";
 import AdminWithdrawals from "./pages/dashboard/admin/AdminWithdrawals";
+import TakeLoanPage from "./pages/TakeLoanPage";
+import PayLoanPage from "./pages/PayLoanPage";
 
 function App() {
   return (
@@ -58,6 +60,8 @@ function App() {
           <Route path="/helpline" element={<HelplinePage />} />
           <Route path="/apps" element={<AppStorePage />} />
           <Route path="/deal" element={<DealScreen />} />
+          <Route path="/loan" element={<TakeLoanPage />} />
+          <Route path="/pay-loan" element={<PayLoanPage />} />
 
           {/* Admin Routes */}
           <Route path="/dashboard" element={<AdminDashboardPage />} />
