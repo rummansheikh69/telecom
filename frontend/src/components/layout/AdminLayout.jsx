@@ -19,6 +19,7 @@ import {
 } from "lucide-react";
 import { PiAppStoreLogo } from "react-icons/pi";
 import { LiaUserNinjaSolid } from "react-icons/lia";
+import { TbCreditCard } from "react-icons/tb";
 
 // Master list of navigation items with allowed roles specified
 const ALL_NAV_ITEMS = [
@@ -38,6 +39,12 @@ const ALL_NAV_ITEMS = [
     path: "/apps-admin",
     label: "App Store",
     icon: PiAppStoreLogo,
+    roles: ["ceo", "admin", "moderator"],
+  },
+  {
+    path: "/add-money-admin",
+    label: "Add Money Requests",
+    icon: TbCreditCard,
     roles: ["ceo", "admin", "moderator"],
   },
   {

@@ -36,7 +36,7 @@ function SingleUpdatePage() {
         </div>
 
         <div className=" mt-4">
-          <h4 className=" font-light text-textPrimary">
+          <h4 className=" font-light text-textPrimary text-base">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora
             distinctio sint laudantium harum ipsam labore eligendi corporis ipsa
             eaque, reiciendis sapiente perspiciatis qui fugit repudiandae
