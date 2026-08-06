@@ -7,7 +7,7 @@ export default function EditPromotionModal({ onSaveSuccess }) {
   const [isOpen, setIsOpen] = useState(false);
   const [promoData, setPromoData] = useState(null);
   const [formData, setFormData] = useState({
-    title: "",
+
     bgImage: "",
     link: "",
   });
@@ -21,12 +21,12 @@ export default function EditPromotionModal({ onSaveSuccess }) {
       setPromoData(data);
       if (data) {
         setFormData({
-          title: data.title || "",
+          
           bgImage: data.bgImage || "",
           link: data.link || "",
         });
       } else {
-        setFormData({ title: "", bgImage: "", link: "" });
+        setFormData({  bgImage: "", link: "" });
       }
     });
 
@@ -36,7 +36,7 @@ export default function EditPromotionModal({ onSaveSuccess }) {
   const handleClose = () => {
     setIsOpen(false);
     setPromoData(null);
-    setFormData({ title: "", bgImage: "", link: "" });
+    setFormData({  bgImage: "", link: "" });
   };
 
   // Convert uploaded image file to Data URL
@@ -63,7 +63,7 @@ export default function EditPromotionModal({ onSaveSuccess }) {
     e.preventDefault();
     const payload = {
       id: promoData?.id || Date.now(),
-      title: formData.title,
+  
       bgImage: formData.bgImage,
       link: formData.link.trim() === "" ? null : formData.link,
     };
@@ -81,22 +81,7 @@ export default function EditPromotionModal({ onSaveSuccess }) {
       title={promoData ? "Edit Promotion Banner" : "New Promotion Banner"}
     >
       <form onSubmit={handleSubmit} className="space-y-4">
-        {/* Title Input */}
-        <div>
-          <label className="text-xs font-bold text-slate-600 uppercase tracking-wider block mb-1">
-            Banner Title
-          </label>
-          <input
-            type="text"
-            required
-            placeholder="e.g. Cashback Offer"
-            value={formData.title}
-            onChange={(e) =>
-              setFormData({ ...formData, title: e.target.value })
-            }
-            className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs text-slate-800 focus:outline-none focus:border-blue-500"
-          />
-        </div>
+       
 
         {/* Image Upload / Preview Field */}
         <div>

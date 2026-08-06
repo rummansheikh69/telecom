@@ -16,10 +16,12 @@ import {
   Ad,
   PhoneCall,
   Newspaper,
+  ArrowRightLeft,
 } from "lucide-react";
 import { PiAppStoreLogo } from "react-icons/pi";
 import { LiaUserNinjaSolid } from "react-icons/lia";
 import { TbCreditCard } from "react-icons/tb";
+import { TbCashMove } from "react-icons/tb";
 
 // Master list of navigation items with allowed roles specified
 const ALL_NAV_ITEMS = [
@@ -45,6 +47,18 @@ const ALL_NAV_ITEMS = [
     path: "/add-money-admin",
     label: "Add Money Requests",
     icon: TbCreditCard,
+    roles: ["ceo", "admin", "moderator"],
+  },
+  {
+    path: "/p2p-admin",
+    label: "P2P Transactions",
+    icon: ArrowRightLeft,
+    roles: ["ceo", "admin", "moderator"],
+  },
+  {
+    path: "/withdrawals-admin",
+    label: "Withdrawals",
+    icon: TbCashMove,
     roles: ["ceo", "admin", "moderator"],
   },
   {
@@ -114,7 +128,7 @@ export default function AdminLayout({ userRole = "ceo", children }) {
         {/* SINGLE EXPANDABLE SIDEBAR (Expands seamlessly in-place)    */}
         {/* ========================================================= */}
         <aside
-          className={`bg-main text-textPrimary pb-14 flex flex-col border-r border-border shrink-0 z-40 transition-all duration-300 ease-in-out ${
+          className={`bg-subMain text-textPrimary pb-14 flex flex-col border-r border-border shrink-0 z-40 transition-all duration-300 ease-in-out ${
             isExpanded ? "w-56 shadow-2xl" : "w-14"
           }`}
         >
@@ -195,7 +209,7 @@ export default function AdminLayout({ userRole = "ceo", children }) {
         {/* ========================================================= */}
         <div className="flex-1 flex flex-col min-w-0 h-full relative overflow-hidden">
           {/* Header Bar */}
-          <header className="h-14 bg-white border-b border-slate-200 px-4 flex items-center justify-between shrink-0 z-10">
+          <header className="h-14 bg-subMain border-b border-slate-200 px-4 flex items-center justify-between shrink-0 z-10">
             <div className="flex items-center gap-2">
               <span className="font-extrabold text-xs tracking-wider text-slate-800 uppercase">
                 Control Panel

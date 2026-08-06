@@ -29,6 +29,8 @@ import ScammersAdminPage from "./pages/dashboard/admin/ScammersAdminPage";
 import TopupAdminPage from "./pages/dashboard/admin/TopupAdminPage";
 import DealScreen from "./pages/DealScreen";
 import AdminAddMoney from "./pages/dashboard/admin/AdminAddMoney";
+import AdminP2PTransactions from "./pages/dashboard/admin/AdminP2PTransactions";
+import AdminWithdrawals from "./pages/dashboard/admin/AdminWithdrawals";
 
 function App() {
   return (
@@ -66,6 +68,8 @@ function App() {
           <Route path="/scammers-admin" element={<ScammersAdminPage />} />
           <Route path="/topup-logs" element={<TopupAdminPage />} />
           <Route path="/add-money-admin" element={<AdminAddMoney />} />
+          <Route path="/p2p-admin" element={<AdminP2PTransactions />} />
+          <Route path="/withdrawals-admin" element={<AdminWithdrawals />} />
           {/* Admin Routes ends*/}
         </Routes>
         <BottomNavigation />

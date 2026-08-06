@@ -99,9 +99,7 @@ export default function PromotionsAdminPage({ userRole = "ceo" }) {
                 </div>
 
                 <div className="relative z-10 flex items-center justify-between">
-                  <span className="text-xs font-bold text-white truncate max-w-[180px]">
-                    {promo.title || "Untitled Banner"}
-                  </span>
+                  <span className="text-xs font-bold text-white truncate max-w-[180px]"></span>
                   {promo.link && (
                     <Link to={promo.link} target="_blank">
                       <span className="bg-white text-slate-900 px-3 py-1 rounded-lg text-[10px] font-bold shadow">
