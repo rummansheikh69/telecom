@@ -211,7 +211,7 @@ export default function DealScreen() {
   return (
     <div className="min-h-screen bg-main font-sans pb-16">
       {/* Universal Page Title */}
-      <PageTitle link="/" title="Create Deal" />
+      <PageTitle link="/" title="Start Deal" />
 
       <div className="p-4 space-y-4 max-w-md mx-auto">
         {/* CSS rule to hide default spin arrows on number inputs */}

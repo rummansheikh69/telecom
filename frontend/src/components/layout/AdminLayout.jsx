@@ -22,6 +22,7 @@ import { PiAppStoreLogo } from "react-icons/pi";
 import { LiaUserNinjaSolid } from "react-icons/lia";
 import { TbCreditCard } from "react-icons/tb";
 import { TbCashMove } from "react-icons/tb";
+import { PiHandCoins } from "react-icons/pi";
 
 // Master list of navigation items with allowed roles specified
 const ALL_NAV_ITEMS = [
@@ -41,6 +42,12 @@ const ALL_NAV_ITEMS = [
     path: "/apps-admin",
     label: "App Store",
     icon: PiAppStoreLogo,
+    roles: ["ceo", "admin", "moderator"],
+  },
+  {
+    path: "/loan-admin",
+    label: "Loan Management",
+    icon: PiHandCoins,
     roles: ["ceo", "admin", "moderator"],
   },
   {

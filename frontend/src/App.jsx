@@ -33,6 +33,8 @@ import AdminP2PTransactions from "./pages/dashboard/admin/AdminP2PTransactions";
 import AdminWithdrawals from "./pages/dashboard/admin/AdminWithdrawals";
 import TakeLoanPage from "./pages/TakeLoanPage";
 import PayLoanPage from "./pages/PayLoanPage";
+import AdminTakeLoan from "./pages/dashboard/admin/AdminTakeLoan";
+import AdminLoanDues from "./pages/dashboard/admin/AdminLoanDues";
 
 function App() {
   return (
@@ -74,6 +76,8 @@ function App() {
           <Route path="/add-money-admin" element={<AdminAddMoney />} />
           <Route path="/p2p-admin" element={<AdminP2PTransactions />} />
           <Route path="/withdrawals-admin" element={<AdminWithdrawals />} />
+          <Route path="/loan-admin" element={<AdminTakeLoan />} />
+          <Route path="/borrowers" element={<AdminLoanDues />} />
           {/* Admin Routes ends*/}
         </Routes>
         <BottomNavigation />

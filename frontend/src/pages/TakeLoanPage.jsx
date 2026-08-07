@@ -274,7 +274,8 @@ export default function TakeLoanPage() {
               <p className="font-medium">
                 Loan must be repaid by{" "}
                 <strong>{getFormattedNextDay12PM()}</strong>. Auto-deduction
-                applies if balance is available on due time.
+                applies if balance is available on due time. Otherwise your
+                account will be temporarily frozen until repayment is made.
               </p>
             </div>
           </div>
