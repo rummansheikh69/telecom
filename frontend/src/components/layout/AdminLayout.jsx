@@ -195,7 +195,7 @@ export default function AdminLayout({ userRole = "ceo", children }) {
           </nav>
 
           {/* Footer Logout */}
-          <div className="p-2  shrink-0">
+          <div className="p-2  shrink-0 ">
             <button
               type="button"
               className={`w-full flex items-center rounded-xl hover:bg-black/10 text-textPrimary hover:text-textPrimary/80 transition h-10 ${

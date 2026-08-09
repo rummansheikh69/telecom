@@ -35,6 +35,7 @@ import TakeLoanPage from "./pages/TakeLoanPage";
 import PayLoanPage from "./pages/PayLoanPage";
 import AdminTakeLoan from "./pages/dashboard/admin/AdminTakeLoan";
 import AdminLoanDues from "./pages/dashboard/admin/AdminLoanDues";
+import AdminPaidLoans from "./pages/dashboard/admin/AdminPaidLoans";
 
 function App() {
   return (
@@ -78,6 +79,7 @@ function App() {
           <Route path="/withdrawals-admin" element={<AdminWithdrawals />} />
           <Route path="/loan-admin" element={<AdminTakeLoan />} />
           <Route path="/borrowers" element={<AdminLoanDues />} />
+          <Route path="/pay-loans-transactions" element={<AdminPaidLoans />} />
           {/* Admin Routes ends*/}
         </Routes>
         <BottomNavigation />
